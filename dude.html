@@ -1,0 +1,80 @@
+<html>
+<head>
+<script language="JavaScript">
+var direction
+var timer;
+
+function start()
+{
+    document.onkeydown=keyListener;
+}
+    
+function keyListener()
+{
+	//alert(window.event.keyCode);
+    var leftPos
+    if(window.event.keyCode > 0)// Tests if any key has been pressed
+    { 
+       leftPos = document.all.dude.style.left; 
+       leftPos = parseInt(leftPos);
+    }
+
+    
+    if(window.event.keyCode == 37)
+    {
+        document.getElementById('dude').innerHTML='<img src="images/dudeLF.gif" width="100">';
+        direction = 180;
+        leftPos = leftPos - 10;
+        document.all.dude.style.left = leftPos;
+    }
+    if(window.event.keyCode == 39)
+    {
+        document.getElementById('dude').innerHTML='<img src="images/dudeRT.gif" width="100">';
+        direction = 0;
+        leftPos = leftPos + 10;
+        document.all.dude.style.left = leftPos;
+    }
+}
+
+</script>
+</head>
+<body bgcolor="CE0015" >
+
+<center>
+<h1> Beach Run! </h1>
+
+Click here to <a href="index.html">return to my home page. </a>
+<br/><br/>
+    
+<input type="button" value="Click" onClick="start()"/>
+</center>
+
+<div id="bkgnd" 
+style="position:absolute; left:350; 
+top:150;">
+	<img src="images/backdrop.jpg" 
+width="650"/>
+</div>
+
+<div id="dude" 
+style="position:absolute; left:400; 
+top:425;">
+	<img 
+src="images/dudeRT.gif"
+width="100"/>
+</div>
+    
+<div id="left" style="position:absolute; left:0; 
+top:150;">
+	<img src="images/color.jpg" width="350"
+height ="406"/>
+</div>
+
+<div id="right" style="position:absolute; 
+left:1000; top:150;">
+	<img src="images/color.jpg" width="370" 
+height ="406"/>
+</div>
+
+</body>
+</html>
